@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:fragment="itemFragment">
+    <!--<link rel="stylesheet" href="../../css/item.css" />-->
+    <!--/*@thymesVar id="product" type="com.store.database.model.Product"*/-->
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function () {
+            var photos = [[${product.photos}]];
+            var currentPhoto = 0;
+
+
+            $(".left").click(function () {
+                if (currentPhoto>0)
+                $(this).parent().children("a").children("img").attr("src",photos[--currentPhoto]);
+            });
+
+            $(".right").click(function () {
+                if (currentPhoto<photos.length-1)
+                $(this).parent().children("a").children("img").attr("src",photos[++currentPhoto]);
+            });
+        })
+        /*]]>*/
+    </script>
+    <div class="item" >
+        <div class="logo">
+            <div class="left more-photos"></div>
+            <div class="right more-photos"></div>
+            <a href=""><img th:src="${product.photos.size()!=0?product.photos[0]:'/resources/image/Xiaomi_Logo.png'}" src="../resources/image/Xiaomi_Logo.png"/>
+            </a>
+        </div>
+        <div class="name">
+            <a href="" th:text="${product.name}">Apn-335-460</a></div>
+        <div class="category-item"><a href="" class="cat-info" th:text="${product.category.name}">Авто</a></div>
+        <div class="rating-buyers">
+            <!--/*@thymesVar id="RatingConvert" type="com.store.other.RatingConvert"*/-->
+            <a href="" class="rating"  th:utext="${T(com.store.other.RatingConvert).convert(product.rating)}">
+                &#9733;&#9733;&#9733;&#9733;&#9734;
+            </a>
+            <a href="" class="buyers" th:text="${product.count}">100</a>
+        </div>
+        <div class="cost" th:text="${product.cost+'$'}">100$</div>
+    </div>
+</div>
+<!--th:text="${RatingConvert.convert(product.rating)}"-->
+</html>

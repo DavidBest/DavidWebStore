@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="../resources/css/pattern.css" />
+    <!--<link rel="stylesheet" href="../resources/css/header.css" />-->
+    <link rel="stylesheet" href="../resources/css/registration.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $(".reg-line>input").focusin(function() {
+                $(this).parent().addClass("reg-line-in-focus");
+            });
+
+            $(".reg-line>input").focusout(function() {
+                $(this).parent().removeClass("reg-line-in-focus");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<!--    <div class="top-line">-->
+<!--    </div>-->
+<div class="usable-pane">
+    <div th:include="header::headerFragment">
+    </div>
+    <div th:include="search::searchFragment"></div>
+    <div class="main">
+        <div class="registration-block">
+            <!--/*@thymesVar id="user" type="com.store.database.model.User"*/-->
+            <form action="/registration" class="registration-form" method="post" th:object="${user}">
+                <div class="reg-line">
+                    <label for="username" >Логин</label>
+                    <input id="username" type="text" th:field="*{username}"/>
+                    <span id="username_err" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                </div>
+                <div class="reg-line">
+                    <label for="user_mail">Почта</label>
+                    <input id="user_mail" type="email" th:field="*{mail}"/>
+                    <span id="user_mail_err" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></span>
+                </div>
+                <div class="reg-line">
+                    <label for="password">Пароль</label>
+                    <input id="password" type="password" th:field="*{password}"/>
+                    <span id="password_err" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                </div>
+                <button class="reg-btn" type="submit"> Зарегестрироваться </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<div>
+
+</div>

@@ -1,0 +1,121 @@
+
+.item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #EEE;
+    width: 150px;
+    height: 250px;
+}
+
+.item>.logo {
+    width: 150px;
+    height: 150px;
+    background: white;
+}
+.logo:hover>{
+/*    z-index: 2;*/
+}
+
+.item>.name {
+    text-align: center;
+    font-size: 18px;
+/*    margin-bottom: 5px;*/
+    margin-top: 5px;
+    
+}
+
+.rating {
+/*    text-align: center;*/
+}
+
+.cost {
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+}
+
+.rating-buyers {
+    text-align: center;
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    left: 0;
+}
+.rating-buyers>div{
+    display: inline-block;
+}
+
+.item a {
+    text-decoration: none;
+    color: black;
+}
+.item a:hover{
+    text-decoration: underline;
+}
+
+.category-item {
+    text-align: center;
+}
+
+.category-item>.cat-info {
+    color: #666;
+    font-size: 13px;
+}
+
+.more-photos {
+    visibility: hidden;
+    position: relative;
+    z-index: 3;
+/*    background: red;*/
+    width: 30px;
+    height: 30px;
+    top: 60px;
+    bottom: 75px;
+/*    right: 5px;*/
+/*    left: 5px;*/
+}
+
+.logo:hover>.more-photos{
+    visibility: visible;
+}
+
+.more-photos:hover{
+     background-color: rgba(200,200,200,0.3)
+}
+
+.logo>.right {
+    right: 0px;
+    position: absolute;
+/*    z-index: 6;*/
+    background-image: url(../image/35.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+
+.logo .left {
+/*    background: red;*/
+/*    left:5px;*/
+    position: absolute;
+/*    z-index: 6;*/
+    background-image: url(../image/34.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+
+.spotlight {
+    background-color: rgba(200,200,200,0.3)
+}
+
+.logo>div,a>img {
+    cursor: pointer;
+}
+.logo>a>img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+/*    z-index: 4;*/
+}
+

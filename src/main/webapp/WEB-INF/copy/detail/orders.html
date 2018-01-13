@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div id="orders-block">
+    <ul>
+        <li th:each="order : ${orders}">
+            <div id="order">
+                <div class="order-detail-of-product">
+                    <div class="date-of-order">
+                        <span>date of order: </span>
+                        <span th:text="*{dateOfOrder}"></span>
+                    </div>
+                    <div class="process-block">
+                        <span> process: </span>
+                        <span th:text="*{process}"></span>
+                    </div>
+                </div>
+                <div class="product-item" th:include="/detail/goodShort::goodElem" th:with="product = *{product}"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+.category {
+    position: relative;
+    min-width: 400px;
+    max-width: 700px;
+    height: 40px;
+    background: #EEE;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.category div {
+    display: inline-block;
+    height: 40px;
+    float: left;
+}
+
+.category .button {
+    width: 30px;
+/*    height: 1px;*/
+    background-repeat: no-repeat;
+    background-size: 22px;
+    margin: 9px 0px 0 15px;
+    /*    height: 40px;*/
+/*    background-image: url(../image/fill_shape.png);*/
+}
+
+.clickable>div.name {
+    font-size: 20px;
+    padding-top: 8px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.info {
+    display: inline-block;
+}
+
+.opened-category {
+    min-width: 600px;
+    max-width: 800px;
+}
+
+.category-info-name {
+    display: inline-block;
+}
+
+.items li {
+    list-style-type: none;
+    display: inline;
+}
+
+.items > ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.category .details {
+    float: right;
+/*    width: 100%;*/
+/*    height: 100%;*/
+    color: black;
+/*    text-decoration: none;*/
+    margin: 10px 20px 0 0;
+}
+
+.clickable {
+    float: left;
+/*    background: red;*/
+    width: 500px;
+}
+
+.closed-button {
+    background-image: url(../image/fill_shape.png);
+}
+
+.opened-button {
+    background-image: url(../image/empty_shape.png);
+}
+
+.open-size {
+    min-width: 600px;
+    max-width: 700px;
+/*    background-color: #E2E;*/
+    border: 10px solid #EEE;
+    border-radius: 0 0 20px 20px;
+    min-height: 100px;
+    margin-top: -20px;
+    z-index:2;
+    
+}
+
+.category-body {
+    position: relative;
+    z-index: 2;
+}
+
+.open-body {
+    margin-top: 20px;
+    
+}
+
+.category-info {
+    min-width: 350px;
+    max-width: 650px;
+    background: #F9F9F9;
+    margin: 0 10px 0 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.items-body>ul>li {
+    display: inline-block;
+    margin: 0 7px 14px; 0;
+/*    line-height: 0%;*/
+    padding: 0;
+}
+
+.items-body>ul {
+/*  margin: 0 10px;*/
+    margin: 20px 60px 10px 60px;
+    padding: 0;
+}
+
+
+
+.items-body {
+    min-width: 600px;
+    max-width: 700px;
+}

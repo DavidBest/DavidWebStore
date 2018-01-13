@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="../resources/css/pattern.css" />
+    <!--<link rel="stylesheet" href="../resources/css/header.css" />-->
+    <link rel="stylesheet" href="../resources/css/login.css" />
+    <!--<script src="http://code.jquery.com/jquery-1.8.3.js"></script>-->
+</head>
+
+<body>
+<!--    <div class="top-line">-->
+<!--    </div>-->
+<div class="usable-pane">
+    <div th:include="header::headerFragment">
+    </div>
+    <div th:include="search::searchFragment"></div>
+    <div class="main">
+        <div class="logging">
+            <form id="login_form" action="/login" method="post">
+                <input id="username" name="username" placeholder="логин" type="tel" autocomplete="off"/><br/>
+                <input id="password" name="password" placeholder="пароль" type="password" /><br/>
+                <button type="submit">Вход</button>
+                <a href="/registration">Регистрация</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<div></div>

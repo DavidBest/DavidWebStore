@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Web Store catalog</title>
+    <link rel="stylesheet" href="../resources/css/pattern.css"/>
+    <!--<link rel="stylesheet" href="../resources/css/header.css"/>-->
+    <link rel="stylesheet" href="../resources/css/catalog.css"/>
+    <link rel="stylesheet" href="../resources/css/category.css"/>
+    <link rel="stylesheet" href="../resources/css/item.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function () {
+
+//            $(".search>#search_btn").click(search);
+//
+//            $(".search>#search_input").keyup(function () {
+//                if (event.keyCode == 13)
+//                    search();
+//            });
+
+            $(".clickable").click(function () {
+                var button = $(this).children(".button");
+                var catBody = $(this).parent().parent()
+                    .children(".category-body");
+                var category = $(this).children(".hidden-category").attr("value");
+
+                if (button.hasClass("closed-button")) {
+                    button.removeClass("closed-button");
+                    button.addClass("opened-button");
+
+                    catBody.load("/openCategory?category=" + category);
+                } else {
+                    button.removeClass("opened-button");
+                    button.addClass("closed-button");
+
+                    catBody.html("");
+                }
+            });
+
+        });
+
+//        var search = function () {
+//            //            alert("asdf");
+//            var query = $(".search>#search_input").val();
+//            window.location.href = "/search?q=" + query;
+//        };
+    </script>
+</head>
+
+<body>
+<!--    <div class="top-line">-->
+<!--    </div>-->
+<div class="usable-pane">
+    <div th:include="header::headerFragment">
+    </div>
+    <div th:include="search::searchFragment"></div>
+    <div class="main">
+        <div class="catalog">
+            <ul class="ul-category">
+                <li th:each="categoryElem : ${categories}">
+                    <div th:include="catalog/category :: categoryFragment" th:with="category = ${categoryElem}"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

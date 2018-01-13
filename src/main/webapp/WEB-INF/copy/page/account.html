@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{../resources/js/headAndMenu.js}" ></script>
+    <style th:src="@{../resources/style/categoryMenuPosition.css}"></style>
+    <style>
+        #account-div {
+            display: block;
+            width: 400px;
+            margin: auto;
+        }
+
+        #left-side-of-page {
+            display: inline-block;
+            margin: auto;
+        }
+
+        #right-side-of-page {
+            display: inline-block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="top-menu"></div>
+<div class="category-menu"></div>
+<div id="account-menu">
+    <ul>
+        <li>
+            <button type="button"> Account detail</button>
+        </li>
+        <li>
+            <button type="button">Orders</button>
+        </li>
+    </ul>
+</div>
+<div id="account-block">
+
+</div>
+</body>
+</html>

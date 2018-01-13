@@ -1,0 +1,76 @@
+
+.registration-table {
+/*    border-spacing: 10px 20px;*/
+    border-collapse: collapse;
+}
+
+.registration-table tr {
+    background-color: #CCC;
+    border-radius: 5px;
+    
+/*    border: 3px solid black;*/
+    
+}
+.registration-table td{
+    padding: 5px 10px;
+}
+
+.reg-line {
+    max-width: 240px;
+    height: 18px;
+    margin: 10px;
+    background: #CCC;
+    padding: 12px;
+    border-radius: 20px;
+    display: block;
+}
+
+.registration-block{
+    margin: 10px auto;
+    width:300px;
+}
+
+
+.reg-line input{
+    float: right;
+    margin-top: -6px;
+        margin-right: -4px;
+    width: 160px;
+    height: 10px;
+/*    background: #F9F9F9;*/
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    outline: none;
+}
+
+.reg-btn {
+    background: #CCC;
+    border: none;
+    min-width: 260px;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 0px 10px;
+/*    font-size: 16px;*/
+    cursor: pointer;
+    outline: none;
+}
+
+.reg-btn:hover,.reg-btn:focus{
+    background: #AAA;
+}
+
+
+
+span {
+    position: absolute;
+    margin-left: 220px;
+    margin-top: -10px;
+    width: 100px;
+    font-size: 14px;
+    color: red;
+}
+
+.reg-line-in-focus {
+    background: #AAA;
+}

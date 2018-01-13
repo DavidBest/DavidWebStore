@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style type="text/css">
+        #headerMain {
+            height: 60px;
+            margin: 0 auto;
+            z-index: 0;
+
+        }
+
+        .top-view {
+            margin-top: 0;
+            display: block;
+            height: 60px;
+            z-index: 9999;
+            position: relative;
+            background-color: rgba(100, 122, 179, 0.76);
+        }
+
+        .top-menu-link {
+            align-items: center;
+            color: #FFF;
+        }
+
+        .logo {
+            /*float: left;*/
+            position: absolute;
+            display: inline-block;
+            height: 60px;
+            margin-left: 0;
+        }
+
+        #search-block {
+            position: absolute;
+            display: inline-block;
+            margin-left: 160px;
+            /*float: left;*/
+
+            /*width: 100px;*/
+        }
+
+        .top-menu-change {
+            float: right;
+            text-align: right;
+            margin-right: 10px;
+            width: 160px;
+        }
+
+        .search {
+            display: inline-block;
+        }
+
+
+        .top-view div:not(.logo) {
+            margin-top: 10px;
+        }
+
+        #searching-line {
+            width: 200px;
+            height: 30px;
+        }
+
+        .top-view a {
+            font-size: 20px;
+        }
+
+        body{
+            margin: 0;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function search() {
+            var searchData = $("#searching-line").val();
+
+            $(location).attr("href","/shopping?search="+searchData);
+        }
+
+        function enterPress(e) {
+            if (e.keyCode===13)
+                search();
+        }
+    </script>
+</head>
+<body>
+<div id="headerMain">
+    <div class="top-view">
+        <div class="logo"><a href="/">
+            <img id="logo" height="60" th:src="@{../../../photo/logo.png}" src=""/>
+        </a>
+        </div>
+        <div id="search-block">
+            <input type="text" id="searching-line" placeholder="Search entire store here..." onkeypress="enterPress(event)"/>
+            <button type="button" id="find" onclick="search()">Search</button>
+        </div>
+        <div sec:authorize="isAnonymous()" class="top-menu-change">
+            <a href="/login" class="top-menu-link" id="top-menu-link-sign-in">Sign in</a>
+            <a href="/registration" class="top-menu-link" id="top-menu-link-sign-out">Sign up</a>
+        </div>
+        <div class="top-menu-change" sec:authorize="isAuthenticated()">
+            <a href="/account" class="top-menu-link" id="top-menu-link-account">Account</a>
+            <a href="/logout" class="top-menu-link" id="top-menu-link-sign-up">Sign out</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="categoryDiv">
+    <ul>
+        <li class="close" th:each="category : ${categories}" th:classappend="${category.innerCategories.isEmpty()}?'last'">
+            <div class="li-content">
+                <div class="text" th:text="${category.name}"></div>
+                <div class="icon"></div>
+            </div>
+            <div class="inner" th:include="detail/categoryPane::categoryDiv" th:with="categories = ${category.innerCategories}" ></div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

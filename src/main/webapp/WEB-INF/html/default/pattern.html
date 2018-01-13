@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/pattern.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $(".search>#search_btn").click(search);
+            $(".search>#search_input").keyup(function() {
+                if (event.keyCode == 13)
+                    search();
+            });
+        });
+
+        var search = function() {
+            //            alert("asdf");
+            var query = $(".search>#search_input").val();
+            window.location.href = "/search?q=" + query;
+        };
+    </script>
+</head>
+
+<body>
+    <!--    <div class="top-line">-->
+    <!--    </div>-->
+    <div class="usable-pane">
+        <div>
+            <div class="header">
+                <div class="logo">My webstore</div>
+                <div class="manu">
+                    <ul class="menu-ul">
+                        <li>
+                            <a href="">Домой</a>
+                        </li>
+                        <li>
+                            <a href="">Каталог</a>
+                        </li>
+                        <li>
+                            <a href="">Поиск</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="log-in-out-div">
+                    <!--                    <a href="">Вход</a>-->
+                    <!--                    <a href="">Регистрация</a>-->
+                    <a href="">Аккаунт</a>
+                    <a href="">Выход</a>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <!--                <form action="#" method="post">-->
+            <input id="search_input" placeholder="Поиск" type="text" />
+            <button id="search_btn" type="button"></button>
+            <!--                </form>-->
+        </div>
+        <div class="main">
+
+        </div>
+    </div>
+</body>
+
+</html>

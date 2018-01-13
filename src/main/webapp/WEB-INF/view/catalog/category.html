@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:fragment="categoryFragment">
+    <!--/*@thymesVar id="category" type="com.store.database.model.Category"*/-->
+    <div class="category-full">
+        <div class="category">
+            <div class="clickable" >
+                <div class="hidden-category" th:value="${category.name}" hidden="hidden"></div>
+                 <!--th:onclick="'openCategoryLoad(\''+${category.name}+'\');'"-->
+
+                <div class="button closed-button">
+                </div>
+                <div class="name" th:text="${category.name}">Автомобили</div>
+            </div>
+            <a href="" class="details">подробнее</a>
+        </div>
+        <div class="category-body">
+            <!--<div th:include="catalog/openCategory :: openCategoryFragment" th:with="category = ${category}"></div>-->
+        </div>
+    </div>
+</div>
+</html>

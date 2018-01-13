@@ -1,0 +1,47 @@
+
+.logging input {
+    margin-bottom: 5px;
+    width: 200px;
+    height: 10px;
+    
+    border: 2px solid #DDD;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.logging input:focus{
+    border: 2px solid #AAA;
+}
+
+.logging{
+    margin: 10px auto;
+    width:300px;
+}
+
+#login_form>button {
+    border:none ;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #DDD;
+    outline: none;
+    cursor: pointer;
+}
+
+#login_form>button:hover, #login_form>button:focus{
+        background: #AAA;
+}
+
+
+
+#login_form>a {
+    text-decoration: none;
+    color: black;
+    outline: none;
+/*    margin-left: 30px;*/
+}
+#login_form>a:focus,#login_form>a:hover{
+    text-decoration: underline;
+}

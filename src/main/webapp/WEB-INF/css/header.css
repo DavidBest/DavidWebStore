@@ -1,0 +1,93 @@
+.header {
+/*    width: 100%;*/
+    min-width: 550px;
+    background: #EEE;
+    height: 50px;
+   
+}
+
+.main-header-div {
+    max-width: 800px;
+    min-width: 600px;
+    margin: auto;
+     background: #e7e7e7;
+    /*    background: red;*/
+    height: 100%;
+    /*    vertical-align: top;*/
+}
+
+.log-in-out-div {
+    float: right;
+    padding-top: 15px;
+    margin-right: 10px;
+}
+.log-in-out-div>a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
+.log-in-out-div a:hover{
+    text-decoration: underline;
+}
+
+.manu > ul > li > a {
+    /*    background: grey;*/
+    padding: 15px 0 0 0;
+    width: 90px;
+    height: 35px;
+    float: left;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    /*    border: 1px solid black;*/
+}
+
+.manu > ul > li > a:hover {
+    background-color:#DDD;
+}
+
+.header>div {
+    display: inline-block;
+}
+
+.menu-ul>li {
+    display: inline-block;
+    /*    width: 100px;*/
+    /*    height: 50px;*/
+    text-align: center;
+    /*    vertical-align:;*/
+    margin: 0 -4px 0 0;
+    padding: 0;
+}
+
+ul.menu-ul {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    /*    border: 0;*/
+    /*    vertical-align: middle;*/
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header>.logo {
+/*    position: absolute;*/
+/*    z-index: 1;*/
+    width: 100px;
+/*    height: 50px;*/
+/*    background: #555;*/
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+    margin-left: 20px;
+/*    font-size: 16px;*/
+}
+

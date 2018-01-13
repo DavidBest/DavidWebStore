@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{../resources/js/headAndMenu.js}"></script>
+    <style th:src="@{../resources/style/categoryMenuPosition.css}"></style>
+</head>
+<body>
+<div class="top-menu"></div>
+<div class="category-menu"></div>
+<div class="login-block">
+
+    <form action="/login" id="loginForm" name="loginForm" method="post">
+        <div th:if="${param.error}"> Combination of username and password is wrong.</div>
+        <table>
+            <tr>
+                <td><label for="username">User name: </label></td>
+                <td><input type="text" id="username" name="username"/></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password: </label></td>
+                <td><input type="password" id="password" name="password"/></td>
+            </tr>
+        </table>
+        <button type="submit">Sign in</button>
+    </form>
+</div>
+</body>
+</html>
