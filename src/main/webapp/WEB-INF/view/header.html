@@ -1,27 +1,27 @@
 <html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="headerFragment">
-    <link rel="stylesheet" href="../resources/css/header.css"/>
+    <link rel="stylesheet" th:href="@{../resources/css/header.css}"/>
     <div class="header">
         <div class="logo">My webstore</div>
         <div class="manu">
             <ul class="menu-ul">
                 <li>
-                    <a href="/">Домой</a>
+                    <a th:href="@{/}">Домой</a>
                 </li>
                 <li>
-                    <a href="/catalog">Каталог</a>
+                    <a th:href="@{/catalog}">Каталог</a>
                 </li>
                 <li>
-                    <a href="/search">Поиск</a>
+                    <a th:href="@{/search}">Поиск</a>
                 </li>
             </ul>
 
         </div>
         <div class="log-in-out-div">
-            <a href="/login" sec:authorize="isAnonymous()">Вход</a>
-            <a href="/registration" sec:authorize="isAnonymous()">Регистрация</a>
-            <a href="/account" sec:authorize="isAuthenticated()">Аккаунт</a>
-            <a href="/logout" sec:authorize="isAuthenticated()">Выход</a>
+            <a th:href="@{/login}" sec:authorize="isAnonymous()">Вход</a>
+            <a th:href="@{/registration}" sec:authorize="isAnonymous()">Регистрация</a>
+            <a th:href="@{/account}" sec:authorize="isAuthenticated()">Аккаунт</a>
+            <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Выход</a>
         </div>
     </div>
 </div>

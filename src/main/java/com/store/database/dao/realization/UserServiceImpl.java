@@ -25,14 +25,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
 
-    @PostConstruct
-    public void creation(){
-       logger.debug("DEBUG");
-       logger.info("INFO");
-       logger.warn("WARN");
-       logger.error("ERROR");
-    }
-
     @Autowired
     public UserServiceImpl(UserRepository repository) {
         this.repository = repository;

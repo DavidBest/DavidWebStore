@@ -1,0 +1,32 @@
+
+.overview-div>div {
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+
+.left-div-overview {
+    background: pink;
+    width: 120px;
+    padding: 12px 10px;
+    float: left;
+}
+
+.rating-div-overview {
+/*    float: left;*/
+    margin-bottom: 6px;
+    
+}
+
+.overview-text-div {
+    margin:10px 5px 5px 10px;
+    width:400px;
+}
+
+.overview-div {
+    min-height: 40px;
+}
+
+
+
+

@@ -34,14 +34,17 @@ public class SecurityStoreConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/**").permitAll()
+
                 .antMatchers("/account/**")
                 .access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
 
-                .antMatchers("/management/**")
-                .access("hasAnyRole('ROLE_EMPLOYEE','ROLE_ADMIN')")
+//                .antMatchers("/management/**")
+//                .access("hasRole('ROLE_EMPLOYEE') or ('ROLE_ADMIN')")
+
                 .and().formLogin().loginPage("/login")
                 .and().logout().logoutSuccessUrl("/")
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .and().httpBasic()
                 .and().csrf().disable();
     }
 

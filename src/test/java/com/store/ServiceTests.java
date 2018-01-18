@@ -53,7 +53,7 @@ public class ServiceTests {
 
         productService.create(product);
 
-        Booking b = buyingService.make(user, product);
+        Booking b = buyingService.buy(user, product);
 
         System.out.println(b.getId());
 
@@ -75,7 +75,7 @@ public class ServiceTests {
 
         Product product = productService.get(1L);
 
-        Booking b = buyingService.make(user, product);
+        Booking b = buyingService.buy(user, product);
 
         System.out.println(b.getId());
 

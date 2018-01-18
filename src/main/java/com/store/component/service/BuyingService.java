@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class BuyingService {
@@ -40,17 +38,17 @@ public class BuyingService {
      **/
 
     //    @Transactional
-    public Booking make(User user, Product product) throws DoesNotExistException {
-
-        return make(user, product, 1);
+    public Booking buy(User user, Product product) throws DoesNotExistException {
+        return buy(user, product, 1);
     }
     //    @Transactional
 
-    private Booking make(User user, Product product, int count) throws DoesNotExistException {
+    public Booking buy(User user, Product product, int count) throws DoesNotExistException {
 
-        if (product.getCount() == 0
-                || user.getCredits().compareTo(product.getCost().multiply(new BigDecimal(count))) < 0)
-            return null;
+        // have to change on exception throw
+        //        if (product.getCount() == 0
+//                || user.getCredits().compareTo(product.getCost().multiply(new BigDecimal(count))) < 0)
+//            return null;
 
         Booking booking = new Booking();
 
@@ -61,21 +59,21 @@ public class BuyingService {
 
         user.setCredits(user.getCredits().subtract(product.getCost().multiply(new BigDecimal(count))));
 
-        product.setCount(product.getCount() - 1);
+        product.setCount(product.getCount() - count);
+
         bookingService.create(booking);
-
-
         productService.update(product);
         userService.update(user);
+
         return booking;
     }
 
-    public List<Booking> makeStorage(User user, Map<Product, Integer> products) {
+    public List<Booking> buyStorage(User user, Map<Product, Integer> products) {
         List<Booking> bookings = new ArrayList<>();
 
         products.forEach((product, integer) -> {
             try {
-                bookings.add(make(user, product, integer));
+                bookings.add(buy(user, product, integer));
             } catch (DoesNotExistException e) {
                 e.printStackTrace();
                 bookings.add(null);

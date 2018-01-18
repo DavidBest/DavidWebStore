@@ -10,6 +10,7 @@ import com.store.exception.DoesNotExistException;
 import com.store.other.Views;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
@@ -22,6 +23,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.regex.Pattern;
+
+import static org.junit.Assert.*;
+import static  org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JpaStoreConfiguration.class, loader = AnnotationConfigContextLoader.class)
@@ -54,6 +58,11 @@ public class DataTests {
 //    }
 
     @Test
+    public void databasePopulator(){
+        roleRepository.findAll().forEach(System.out::println);
+    }
+
+    @Test
     public void viewCategory() throws JsonProcessingException {
 
         Category c = categoryService.get("phone");
@@ -72,8 +81,8 @@ public class DataTests {
 
         Product product = new Product();
         product.setName("icoljaa");
-        product.setCost(new BigDecimal(1000));
-        product.setCount(1223);
+        product.setCost(new BigDecimal(100));
+        product.setCount(123);
         product.setDescription("robot amazing");
 
         category.setProducts(Collections.singletonList(product));

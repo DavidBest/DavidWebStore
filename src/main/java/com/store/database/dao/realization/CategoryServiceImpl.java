@@ -23,7 +23,8 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category create(Category elem) {
-        elem.getProducts().forEach(product -> product.setCategory(elem));
+        if (elem.getProducts() != null)
+            elem.getProducts().forEach(product -> product.setCategory(elem));
 //        Category category = repository.save(elem);
         return repository.save(elem);
     }

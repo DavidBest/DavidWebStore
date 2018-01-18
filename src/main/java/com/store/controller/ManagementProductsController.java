@@ -16,6 +16,9 @@ import static org.springframework.http.HttpStatus.*;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Provide rest adding products from the employee application
+ */
 @RestController
 @RequestMapping("/management/product")
 public class ManagementProductsController {

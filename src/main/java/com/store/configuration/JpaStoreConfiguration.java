@@ -2,10 +2,15 @@ package com.store.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.init.DataSourceInitializer;
+import org.springframework.jdbc.datasource.init.DatabasePopulator;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -24,6 +29,9 @@ import java.util.Properties;
 public class JpaStoreConfiguration {
 
     private final Environment environment;
+
+    @Value("sql_script/role_creation.sql")
+    private Resource roleScript;
 
     @Autowired
     public JpaStoreConfiguration(Environment environment) {
@@ -53,12 +61,35 @@ public class JpaStoreConfiguration {
     @Bean
     public Properties entityManagerProperties(String autoProperty) {
         Properties properties = new Properties();
-//        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         properties.setProperty("hibernate.hbm2ddl.auto", autoProperty);
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 
         return properties;
+    }
+
+    @Bean
+    public DataSourceInitializer dataSourceInitializer(DataSource dataSource, DatabasePopulator databasePopulator){
+        DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
+        dataSourceInitializer.setDataSource(dataSource);
+        dataSourceInitializer.setDatabasePopulator(databasePopulator);
+
+        return dataSourceInitializer;
+    }
+
+    @Bean
+    @Profile({"create","create-delete"})
+    public DatabasePopulator databasePopulator(){
+        ResourceDatabasePopulator resourcePopulator = new ResourceDatabasePopulator();
+        resourcePopulator.addScript(roleScript);
+
+        return resourcePopulator;
+    }
+
+    @Bean
+    @Profile("update")
+    public DatabasePopulator databasePopulatorUpdate(){
+        return new ResourceDatabasePopulator();
     }
 
     @Bean
@@ -71,13 +102,6 @@ public class JpaStoreConfiguration {
 
         return dataSource;
     }
-
-//    public DataSourceInitializer dataSourceInitializer(DataSource dataSource){
-//        DataSourceInitializer initializer = new DataSourceInitializer();
-//        initializer.setDataSource(dataSource);
-//
-//        return initializer;
-//    }
 
     @Bean("autoProperty")
     @Profile("create")

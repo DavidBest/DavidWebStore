@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Web Store catalog</title>
-    <link rel="stylesheet" href="../resources/css/pattern.css"/>
+    <link rel="stylesheet" th:href="@{/resources/css/pattern.css}"/>
     <!--<link rel="stylesheet" href="../resources/css/header.css"/>-->
-    <link rel="stylesheet" href="../resources/css/catalog.css"/>
-    <link rel="stylesheet" href="../resources/css/category.css"/>
-    <link rel="stylesheet" href="../resources/css/item.css"/>
+    <link rel="stylesheet" th:href="@{/resources/css/catalog.css}"/>
+    <link rel="stylesheet" th:href="@{/resources/css/category.css}"/>
+    <link rel="stylesheet" th:href="@{/resources/css/item.css}"/>
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <script>
         $(document).ready(function () {
@@ -39,6 +39,11 @@
                 }
             });
 
+            $(".shadow-div").click(function () {
+                $(".shadow-div").attr("hidden","hidden");
+                $(".item-full-div").attr("hidden","hidden");
+            })
+
         });
 
 //        var search = function () {
@@ -53,6 +58,10 @@
 <!--    <div class="top-line">-->
 <!--    </div>-->
 <div class="usable-pane">
+    <div class="item-full-div" hidden="hidden"></div>
+    <div class="shadow-div" hidden="hidden">
+        <div class="item-shadow-div"></div>
+    </div>
     <div th:include="header::headerFragment">
     </div>
     <div th:include="search::searchFragment"></div>

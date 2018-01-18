@@ -20,6 +20,9 @@ import javax.swing.text.View;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Provide rest adding categories with products from the employee application
+ */
 @RestController
 @RequestMapping("/management/category")
 //@RolesAllowed("ROLE_EMPLOYEE")

@@ -113,7 +113,7 @@
 
 .items-body>ul>li {
     display: inline-block;
-    margin: 0 7px 14px; 0;
+    margin: 0 7px 14px 0;
 /*    line-height: 0%;*/
     padding: 0;
 }

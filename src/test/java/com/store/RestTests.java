@@ -1,12 +1,18 @@
 package com.store;
 
 import com.store.configuration.JpaStoreConfiguration;
+import com.store.configuration.StoreConfiguration;
 import com.store.database.model.Category;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.web.client.RestTemplate;
 
 //import static org.mockito.Mockito.*;
@@ -18,8 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = JpaStoreConfiguration.class,loader = AnnotationConfigContextLoader.class)
-//@Profile("update")
+//@ContextConfiguration(classes = {StoreConfiguration.class},loader = AnnotationConfigContextLoader.class)
+//@ActiveProfiles("update")
 public class RestTests {
 
     public RestTemplate template;

@@ -1,10 +1,9 @@
-
-.ul-category>li {
+.ul-category > li {
     list-style-type: none;
     margin: 20px 0px;
 }
 
-.catalog>ul {
+.catalog > ul {
     margin: 0;
     padding: 0;
 }
@@ -12,9 +11,29 @@
 .catalog {
     min-width: 600px;
 }
+
 .test {
     min-width: 600px;
     max-width: 800px;
     margin: 100%;
+}
+
+.shadow-div {
+    position: absolute;
+    background: #EEEEEE;
+    min-width: 800px;
+    max-width: 800px;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 10;
+    left:0;
+    right: 0;
+    margin: auto;
+}
+.item-full-div {
+    position: absolute;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    z-index: 11;
 }
 

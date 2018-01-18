@@ -1,0 +1,87 @@
+<div>
+    <link rel="stylesheet" href="../../css/openItem.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".rating-link-open:not(.chosen-overview)").click(function() {
+                $(".chosen-overview").removeClass("chosen-overview");
+
+                var rating = $(this);
+                rating.addClass("chosen-overview");
+                //                $(".overviews-open").load("/overviewList?rating=" +rating.getAttribute("id"));
+            });
+        });
+
+    </script>
+    <div class="openItem">
+        <div class="images-div">
+            <div class="big-image-open-div">
+                <div class="left more-photos"></div>
+                <div class="right more-photos"></div>
+                <a href="">
+                <img src="../../image/Xiaomi_Logo.png">
+                    </a>
+            </div>
+            <div class="small-images-open-div">
+                <a href=""><img src="../../image/Xiaomi_Logo.png"></a>
+                <a href=""><img src="../../image/Xiaomi_Logo.png"></a>
+                <a href=""><img src="../../image/Xiaomi_Logo.png"></a>
+                <a href=""><img src="../../image/Xiaomi_Logo.png"></a>
+                <a href=""><img src="../../image/Xiaomi_Logo.png"></a>
+            </div>
+        </div>
+        <div class="right-side-open-item">
+            <div class="name-open-item">something name</div>
+            <div class="catalog-open-item">
+                <a href="" class="catalog-link-open-item">Phone</a>
+            </div>
+            <div class="averange-rating-div"><a href="#overviews">&#9733;&#9733;&#9734;&#9734;&#9734;</a><a href="#overviews">100</a></div>
+            <div class="sales-div">
+                <span class="sales">продано:</span>
+                <span class="count">149</span>
+            </div>
+            <div class="left-div">
+                <span class="left">осталость:</span>
+                <span class="count">123</span>
+            </div>
+            <div class="cost">123$</div>
+            <div class="bag-buying-div">
+                <button class="bag-button">В корзину</button>
+                <div></div>
+                <button class="buy-button" disabled="disabled">Купить</button>
+            </div>
+        </div>
+        <div class="about-open-item"> много много много текста много много много текста много много много текста много много много текста много много много текста много много много текста много много много текста много много много текста
+        </div>
+        <div class="overview-header">
+            <ul>
+                <li><a class="rating-link-open">Все</a></li>
+                <li><a class="rating-link-open">&#9733;&#9734;&#9734;&#9734;&#9734;</a></li>
+                <li><a class="rating-link-open">&#9733;&#9733;&#9734;&#9734;&#9734;</a></li>
+                <li><a class="rating-link-open">&#9733;&#9733;&#9733;&#9734;&#9734;</a></li>
+                <li><a class="rating-link-open">&#9733;&#9733;&#9733;&#9733;&#9734;</a></li>
+                <li><a class="rating-link-open">&#9733;&#9733;&#9733;&#9733;&#9733;</a></li>
+            </ul>
+        </div>
+        <div class="overviews-open">
+            <a name="overviews"></a>
+            <ul>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>sakdjslkfslkjfkdjfdk</li>
+                <li>
+                    <div class="nex-overviews">
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="next-overviews-open"></div>
+    </div>
+</div>
