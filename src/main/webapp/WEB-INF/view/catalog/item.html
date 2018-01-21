@@ -25,6 +25,7 @@
 //                alert("no");
                 $(".shadow-div").removeAttr("hidden");
                 $(".item-full-div").removeAttr("hidden").load("/item/"+id);
+                history.pushState(null,null,"/catalog?id="+id);
 //                $(".item-full-div").load("/item/"+id);
             });
 

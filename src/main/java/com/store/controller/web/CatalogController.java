@@ -24,7 +24,7 @@ public class CatalogController {
      * @return modelAndView of catalog page
      */
     @GetMapping("/catalog")
-    public ModelAndView catalog() {
+    public ModelAndView catalog(@RequestParam(required = false) Long id) {
         ModelAndView modelAndView = new ModelAndView("/catalog/catalog");
         modelAndView.addObject("categories", categoryService.getAll());
 
